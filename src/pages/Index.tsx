@@ -1,4 +1,13 @@
 import CourseCard from "@/components/CourseCard";
+import basicDrivingImage from "@/assets/basic-driving.jpg";
+import trafficRulesImage from "@/assets/traffic-rules.jpg";
+import roadSafetyImage from "@/assets/road-safety.jpg";
+import carMaintenanceImage from "@/assets/car-maintenance.jpg";
+import firstAidImage from "@/assets/first-aid.jpg";
+import driverPsychologyImage from "@/assets/driver-psychology.jpg";
+import cityDrivingImage from "@/assets/city-driving.jpg";
+import highwayDrivingImage from "@/assets/highway-driving.jpg";
+import parkingImage from "@/assets/parking.jpg";
 
 const Index = () => {
   const courses = [
@@ -8,10 +17,11 @@ const Index = () => {
       title: "Навчання в автошколі",
       subtitle: "Основи керування автомобілем",
       progress: "0/3",
+      imageUrl: basicDrivingImage,
       modules: [
-        { id: 1, title: "Модуль 1", locked: true },
-        { id: 2, title: "Модуль 2", locked: true },
-        { id: 3, title: "Модуль 3", locked: true },
+        { id: 1, title: "Модуль 1", subtitle: "Посадка, дзеркала, ремені безпеки", locked: true },
+        { id: 2, title: "Модуль 2", subtitle: "Педалі, зчеплення, передачі", locked: true },
+        { id: 3, title: "Модуль 3", subtitle: "Кермування та координація", locked: true },
       ],
     },
     {
@@ -20,6 +30,7 @@ const Index = () => {
       title: "Правила дорожнього руху",
       subtitle: "Фундаментальні знання ПДР",
       progress: "0/3",
+      imageUrl: trafficRulesImage,
       modules: [
         { id: 1, title: "Модуль 1", subtitle: "Дорожні знаки та розмітка", locked: true },
         { id: 2, title: "Модуль 2", subtitle: "Пріоритет на дорозі", locked: true },
@@ -32,6 +43,7 @@ const Index = () => {
       title: "Безпека дорожнього руху",
       subtitle: "Запобігання аварійним ситуаціям",
       progress: "0/3",
+      imageUrl: roadSafetyImage,
       modules: [
         { id: 1, title: "Модуль 1", subtitle: "Аварійні ситуації", locked: true },
         { id: 2, title: "Модуль 2", subtitle: "Дистанція та бічний інтервал", locked: true },
@@ -44,6 +56,7 @@ const Index = () => {
       title: "Пристрій та обслуговування автомобіля",
       subtitle: "Технічні знання водія",
       progress: "0/3",
+      imageUrl: carMaintenanceImage,
       modules: [
         { id: 1, title: "Модуль 1", subtitle: "Основні вузли та агрегати", locked: true },
         { id: 2, title: "Модуль 2", subtitle: "Щоденне обслуговування", locked: true },
@@ -56,6 +69,7 @@ const Index = () => {
       title: "Перша домедична допомога",
       subtitle: "Надання допомоги при ДТП",
       progress: "0/3",
+      imageUrl: firstAidImage,
       modules: [
         { id: 1, title: "Модуль 1", subtitle: "Оцінка стану потерпілого", locked: true },
         { id: 2, title: "Модуль 2", subtitle: "Невідкладні заходи", locked: true },
@@ -68,6 +82,7 @@ const Index = () => {
       title: "Психологія водія",
       subtitle: "Психологічна підготовка до керування",
       progress: "0/3",
+      imageUrl: driverPsychologyImage,
       modules: [
         { id: 1, title: "Модуль 1", subtitle: "Увага та концентрація", locked: true },
         { id: 2, title: "Модуль 2", subtitle: "Поведінка на дорозі", locked: true },
@@ -80,6 +95,7 @@ const Index = () => {
       title: "Рух у населених пунктах",
       subtitle: "Особливості міського руху",
       progress: "0/1",
+      imageUrl: cityDrivingImage,
       modules: [
         { id: 1, title: "Модуль 1", subtitle: "Правила руху в місті", locked: true },
       ],
@@ -90,6 +106,7 @@ const Index = () => {
       title: "Рух поза населеними пунктами",
       subtitle: "Їзда на трасі та заміській дорозі",
       progress: "0/1",
+      imageUrl: highwayDrivingImage,
       modules: [
         { id: 1, title: "Модуль 1", subtitle: "Особливості заміського руху", locked: true },
       ],
@@ -100,6 +117,7 @@ const Index = () => {
       title: "Паркування та зупинка",
       subtitle: "Техніка паркування різних типів",
       progress: "0/1",
+      imageUrl: parkingImage,
       modules: [
         { id: 1, title: "Модуль 1", subtitle: "Види паркування", locked: true },
       ],
@@ -110,7 +128,7 @@ const Index = () => {
     <div className="min-h-screen bg-background py-8 px-4 md:px-6">
       <div className="max-w-7xl mx-auto">
         <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-8 text-center">
-          Курси автошколи
+          DriveZone
         </h1>
         <div className="grid gap-8 md:gap-12">
           {courses.map((course) => (
@@ -121,6 +139,7 @@ const Index = () => {
               subtitle={course.subtitle}
               progress={course.progress}
               modules={course.modules}
+              imageUrl={course.imageUrl}
             />
           ))}
         </div>
